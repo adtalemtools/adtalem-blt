@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class AdtalemDbCommand extends BltTasks {
 
-  // use CommandOptionTargetSitesTrait;
+   use CommandOptionTargetSitesTrait;
 
   /**
    * The Acquia Cloud API Client.

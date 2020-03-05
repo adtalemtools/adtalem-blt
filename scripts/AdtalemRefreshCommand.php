@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class AdtalemRefreshCommand extends BltTasks {
 
-  // use CommandOptionSourceSitesTrait;
+   use CommandOptionSourceSitesTrait;
 
   /**
    * The Acquia Cloud API Client.

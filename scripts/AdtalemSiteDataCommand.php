@@ -18,7 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class AdtalemSiteDataCommand extends BltTasks {
 
-  // use CommandOptionTargetSitesTrait;
+   use CommandOptionTargetSitesTrait;
 
   /**
    * The ACSF API Client.

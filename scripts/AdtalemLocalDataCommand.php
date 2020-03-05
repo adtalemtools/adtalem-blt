@@ -11,7 +11,7 @@ use Acquia\Blt\Robo\BltTasks;
  */
 class AdtalemLocalDataCommand extends BltTasks {
 
-  //use CommandOptionSourceSitesTrait;
+  use CommandOptionSourceSitesTrait;
 
   /**
    * Sync data from an upstream to local.
