@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
 use Acquia\Blt\Robo\Commands\Sync as Sync;
@@ -10,7 +10,7 @@ use Acquia\Blt\Robo\Config\ConfigInitializer;
 /**
  * Defines commands in the "sync" namespace.
  */
-class AdtalemCommands extends BltTasks{
+class AdtalemCommand extends BltTasks{
 
   /**
    * Synchronize each multisite.
@@ -94,7 +94,7 @@ class AdtalemCommands extends BltTasks{
       ->drush('sql-drop');
 
   }
-  /**
+    /**
    * @param $multisites
    *
    * @return mixed
@@ -153,7 +153,7 @@ class AdtalemCommands extends BltTasks{
       ->option('exclude-paths', implode(':', $this->getConfigValue('sync.exclude-paths')));
     $result = $task->run();
     if (!$result->wasSuccessful()) {
-      return $result;
+        return $result;
     }
 
     $dest_dir = $this->getConfigValue('docroot') . "/../files-private/" . $site_dir;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\Ac\AcsfAcApiClient;
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\CommandOptionTargetSitesTrait;
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
+use Acquia\Blt\Custom\Helpers\Acsf\Ac\AcsfAcApiClient;
+use Acquia\Blt\Custom\Helpers\Acsf\CommandOptionTargetSitesTrait;
+use Acquia\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
 use Acquia\Blt\Robo\BltTasks;
 use Consolidation\AnnotatedCommand\AnnotationData;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Defines commands in the "adtalem:db" namespace.
  */
-class AdtalemDbCommands extends BltTasks {
+class AdtalemDbCommand extends BltTasks {
 
   use CommandOptionTargetSitesTrait;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\Ac;
+namespace Acquia\Blt\Custom\Helpers\Acsf\Ac;
 
 use AcquiaCloudApi\CloudApi\Client;
 use AcquiaCloudApi\CloudApi\Connector;
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\Ac\AcWrapperClient;
+use Acquia\Blt\Custom\Helpers\Acsf\Ac\AcWrapperClient;
 use Acquia\Blt\Robo\Config\ConfigInitializer;
 use Consolidation\SiteAlias\SiteAliasManager;
 use Drush\SiteAlias\SiteAliasFileLoader;

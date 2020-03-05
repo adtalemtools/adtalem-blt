@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\Ac;
+namespace Acquia\Blt\Custom\Helpers\Acsf\Ac;
 
 use AcquiaCloudApi\CloudApi\Client;
 use Acquia\Hmac\Key;

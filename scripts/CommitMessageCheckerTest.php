@@ -1,10 +1,10 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Tests;
+namespace Acquia\Blt\Custom\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\CommitMessageChecker;
+use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
 
 /**
  * A test to make sure the commit message checker matches as expected.

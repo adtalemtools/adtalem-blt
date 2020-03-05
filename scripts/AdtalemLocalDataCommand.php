@@ -1,15 +1,15 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\CommandOptionSourceSitesTrait;
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
+use Acquia\Blt\Custom\Helpers\Acsf\CommandOptionSourceSitesTrait;
+use Acquia\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
 use Acquia\Blt\Robo\BltTasks;
 
 /**
  * Defines commands in the "adtalem:local:data" namespace.
  */
-class AdtalemLocalDataCommands extends BltTasks {
+class AdtalemLocalDataCommand extends BltTasks {
 
   use CommandOptionSourceSitesTrait;
 

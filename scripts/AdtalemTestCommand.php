@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
 use Acquia\Blt\Robo\Commands\Tests\BehatCommand;
 use Consolidation\SiteAlias\SiteAliasManager;
@@ -10,7 +10,7 @@ use Robo\Task\Testing\Behat;
 /**
  * Runs test suites for Adtalem sites.
  */
-class AdtalemTestCommands extends BehatCommand {
+class AdtalemTestCommand extends BehatCommand {
 
   /**
    * The current BEHAT_PARAMS value to use.

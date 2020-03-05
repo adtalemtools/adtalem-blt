@@ -1,14 +1,14 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
-use Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\CommitMessageChecker;
+use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
 use Acquia\Blt\Robo\Commands\Git\GitCommand;
 
 /**
  * Defines commands in the "adtalem:git:*" namespace.
  */
-class AdtalemGitCommands extends GitCommand {
+class AdtalemGitCommand extends GitCommand {
 
   /**
    * Validates a git commit message.

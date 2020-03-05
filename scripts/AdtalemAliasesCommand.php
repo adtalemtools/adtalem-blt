@@ -1,18 +1,22 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: matthew
+ * Date: 2019-01-21
+ * Time: 09:59
+ */
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
 use Acquia\Blt\Robo\Commands\Generate;
-use Symfony\Component\Console\Event\ConsoleCommandEvent;
 
-class AdtalemAliasesCommands extends Generate\AliasesCommand {
+class AdtalemAliasesCommand extends Generate\AliasesCommand {
 
   /**
    * Generates new Acquia site aliases for blt config.
    *
    * @command adtalem:aliases:generate
-   * @aliases adtalem:generate
-   * @executeInVm
+   *
    */
   public function generateAliasesAcquia() {
     $this->cloudConfDir = $_SERVER['HOME'] . '/.acquia';
@@ -38,16 +42,6 @@ class AdtalemAliasesCommands extends Generate\AliasesCommand {
     if (!$error) {
       $this->say("<info>Aliases were written, type 'drush sa' to see them.</info>");
     }
-  }
-
-  /**
-   * This will be called before the `adtalem:aliases:generate` command is executed.
-   *
-   * @hook command-event adtalem:aliases:generate
-   */
-  public function preExampleGenerate(ConsoleCommandEvent $event) {
-    $command = $event->getCommand();
-    $this->say("preCommandMessage hook: The {$command->getName()} command isnt about to run!");
   }
 
   /**

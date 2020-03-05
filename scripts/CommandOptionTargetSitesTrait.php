@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
+namespace Acquia\Blt\Custom\Helpers\Acsf;
 
 use Consolidation\SiteAlias\SiteAliasManager;
 use Drush\SiteAlias\SiteAliasFileLoader;
