@@ -30,29 +30,29 @@ class AdtalemCommands extends BltTasks {
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AcWrapperClient.php',
         $this->getConfigValue('repo.root') . '/blt/src/Helpers/Acsf/Ac/AcWrapperClient.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemAliasesCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemAliasesCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemAliasesCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemAliasesCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemDbCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemDbCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemDbCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemDbCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemGitCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemGitCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemGitCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemGitCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemLocalDataCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemLocalDataCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemLocalDataCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemLocalDataCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemRefreshCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemRefreshCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemRefreshCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemRefreshCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemSiteDataCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemSiteDataCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemSiteDataCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemSiteDataCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemTestCommands.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemTestCommands.php', FALSE)
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemTestCommand.php',
+        $this->getConfigValue('repo.root') . '/blt/src/Commands/AdtalemTestCommand.php', FALSE)
       ->copy(
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/CommandOptionSourceSitesTrait.php',
         $this->getConfigValue('repo.root') . '/blt/src/Helpers/Acsf/CommandOptionSourceSitesTrait.php', FALSE)
