@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom\Commands;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
 use Acquia\Blt\Robo\Commands\Sync as Sync;

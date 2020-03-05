@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Filesets;
 
 use Acquia\Blt\Annotations\Fileset;
 use Acquia\Blt\Robo\Config\ConfigAwareTrait;

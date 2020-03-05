@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom\Helpers;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers;
 
 /**
  * A class to isolate the commit message validation logic.

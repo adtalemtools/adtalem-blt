@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom\Tests;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;

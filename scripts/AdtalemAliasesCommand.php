@@ -6,7 +6,7 @@
  * Time: 09:59
  */
 
-namespace Acquia\Blt\Custom\Commands;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\Commands\Generate;
 

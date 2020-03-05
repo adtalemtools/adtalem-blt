@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom\Helpers\Acsf;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
 
 use \Psr\Log\LoggerInterface;
 

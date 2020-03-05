@@ -1,11 +1,11 @@
 <?php
 
-namespace Acquia\Blt\Custom\Commands;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
-use Acquia\Blt\Custom\Helpers\Acsf\CommandOptionTargetSitesTrait;
-use Acquia\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
-use Acquia\Blt\Custom\Helpers\Acsf\AcsfApiClient;
+use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionTargetSitesTrait;
+use Adtalem\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
+use Adtalem\Blt\Plugin\Helpers\Acsf\AcsfApiClient;
 use Consolidation\AnnotatedCommand\AnnotationData;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;

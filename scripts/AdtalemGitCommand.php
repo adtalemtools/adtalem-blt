@@ -1,8 +1,8 @@
 <?php
 
-namespace Acquia\Blt\Custom\Commands;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
 
-use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
+use Adtalem\Blt\Plugin\Helpers\CommitMessageChecker;
 use Acquia\Blt\Robo\Commands\Git\GitCommand;
 
 /**

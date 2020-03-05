@@ -14,9 +14,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "Adtalemtools\\AdtalemBlt\\": "./src/",
-      "Acquia\\Blt\\Custom\\": "./src/",
-      "Acquia\\Blt\\": "src/"
+      "Adtalemtools\\AdtalemBlt\\": "./src/"
     }
   }
 }

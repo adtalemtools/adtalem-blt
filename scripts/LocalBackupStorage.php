@@ -1,6 +1,6 @@
 <?php
 
-namespace Acquia\Blt\Custom\Helpers\Acsf;
+namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
 
 use AcquiaCloudApi\Response\BackupResponse;
 use Consolidation\Config\ConfigInterface;
