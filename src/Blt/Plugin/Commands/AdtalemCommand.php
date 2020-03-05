@@ -7,18 +7,18 @@ use Acquia\Blt\Robo\Exceptions\BltException;
 use Robo\Contract\VerbosityThresholdInterface;
 
 /**
- * Defines commands in the "examples:*" namespace.
+ * Defines commands in the "adtalem:*" namespace.
  */
 class AdtalemCommand extends BltTasks {
 
   /**
-   * Generates example files for writing adtalem commands and hooks.
+   * Initializes Acquia BLT commands for the Adtalem sites.
    *
    * @command recipes:adtalem:init
-   *
    * @aliases rai adtalem:init
+   * @throws \Acquia\Blt\Robo\Exceptions\BltException
    */
-  public function init() {
+  public function adtalemInit() {
     $result = $this->taskFilesystemStack()
       ->copy(
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AcsfAcApiClient.php',
@@ -79,10 +79,10 @@ class AdtalemCommand extends BltTasks {
       ->run();
 
     if (!$result->wasSuccessful()) {
-      throw new BltException("Could not copy example files into the repository root.");
+      throw new BltException("Could not copy Adtalem files into the repository root.");
     }
 
-    $this->say("<info>Example commands and hooks were copied to your repository root.</info>");
+    $this->say("<info>Adtalem commands and hooks were copied to your repository root.</info>");
   }
 
 }
