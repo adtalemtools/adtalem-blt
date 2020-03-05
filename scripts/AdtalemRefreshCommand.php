@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Adtalem\Blt\Plugin\Helpers\Acsf\Ac\AcsfAcApiClient;
 use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionSourceSitesTrait;
@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class AdtalemRefreshCommand extends BltTasks {
 
-  use CommandOptionSourceSitesTrait;
+  // use CommandOptionSourceSitesTrait;
 
   /**
    * The Acquia Cloud API Client.
@@ -185,8 +185,7 @@ class AdtalemRefreshCommand extends BltTasks {
           return 1;
         }
       }
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to backup sites, reason: {$e->getMessage()}");
       return 1;
     }

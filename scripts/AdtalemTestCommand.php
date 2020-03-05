@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\Commands\Tests\BehatCommand;
 use Consolidation\SiteAlias\SiteAliasManager;
@@ -26,7 +26,8 @@ class AdtalemTestCommand extends BehatCommand {
    *   The command options.
    *
    * @command adtalem:tests:behat:run
-   * @description Executes all behat tests setting the correct base URL for the site. This optionally launch PhantomJS or Selenium prior to execution.
+   * @description Executes all behat tests setting the correct base URL for the
+   *   site. This optionally launch PhantomJS or Selenium prior to execution.
    * @usage
    *   Executes all configured tests.
    * @usage -D behat.paths=${PWD}/tests/behat/features/Examples.feature
@@ -98,8 +99,7 @@ class AdtalemTestCommand extends BehatCommand {
           $result = 1;
         }
         $this->killWebDriver();
-      }
-      catch (\Exception $e) {
+      } catch (\Exception $e) {
         // Kill web driver a server to prevent Pipelines from hanging after fail.
         $this->killWebDriver();
         throw $e;
@@ -111,7 +111,8 @@ class AdtalemTestCommand extends BehatCommand {
   }
 
   /**
-   * To avoid the execution exiting on the first failure we capture exceptions and continue.
+   * To avoid the execution exiting on the first failure we capture exceptions
+   * and continue.
    *
    * @return bool
    *   If true, the command succeeded.
@@ -120,28 +121,30 @@ class AdtalemTestCommand extends BehatCommand {
     try {
       parent::executeBehatTests();
       return TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       return FALSE;
     }
   }
 
   /**
-   * We need to set the BEHAT_PARAMS argument on every task run so that the base_url changes.
+   * We need to set the BEHAT_PARAMS argument on every task run so that the
+   * base_url changes.
    *
    * @param null|string $pathToBehat
    *
    * @return \Robo\Task\Testing\Behat|\Robo\Collection\CollectionBuilder
    */
-  protected function taskBehat($pathToBehat = null) {
-    return $this->task(Behat::class, $pathToBehat)->env('BEHAT_PARAMS', $this->currentBehatParams);
+  protected function taskBehat($pathToBehat = NULL) {
+    return $this->task(Behat::class, $pathToBehat)
+      ->env('BEHAT_PARAMS', $this->currentBehatParams);
   }
 
   /**
    * Get the site maps for the given environment and site list.
    *
    * @param string $target_env
-   *   The environment to run the task against, if an empty string use the default for the site in blt/blt.yml.
+   *   The environment to run the task against, if an empty string use the
+   *   default for the site in blt/blt.yml.
    * @param array $selected_site_ids
    *   The sites to get a sync map for.
    *
@@ -172,9 +175,9 @@ class AdtalemTestCommand extends BehatCommand {
     $found_site_ids = [];
     foreach ($multisites as $key => $multisite) {
       // TODO: Support filtering by specific sites.
-//      if (!in_array($multisite['site_id'], $selected_site_ids)) {
-//        continue;
-//      }
+      //      if (!in_array($multisite['site_id'], $selected_site_ids)) {
+      //        continue;
+      //      }
 
       $input_remote_alias_parts = explode('.', $multisite['remote']);
 
@@ -222,10 +225,10 @@ class AdtalemTestCommand extends BehatCommand {
         'local_url' => $multisite['local'],
         'site_dir' => $multisite['site_dir'],
         'normalized_sitename' => $key,
-//        'site_id' => $multisite['site_id'],
+        //        'site_id' => $multisite['site_id'],
         'env' => $target_env,
       ];
-//      $found_site_ids[] = $multisite['site_id'];
+      //      $found_site_ids[] = $multisite['site_id'];
     }
     /* TODO: support filtering by a list of sites
     // Validate we found all the sync maps.

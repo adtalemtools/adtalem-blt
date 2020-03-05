@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
+namespace Adtalem\Blt\Plugin\Helpers\Acsf;
 
 use Consolidation\SiteAlias\SiteAliasManager;
 use Drush\SiteAlias\SiteAliasFileLoader;
@@ -74,6 +74,7 @@ trait CommandOptionSourceSitesTrait {
 
   /**
    * Confirm the user will continue with the operation on the selected sites.
+   *
    * @param $sync_maps
    * @param $operation_names
    * @param string $type
@@ -127,7 +128,8 @@ trait CommandOptionSourceSitesTrait {
    * Get the maps for syncing from remote to local.
    *
    * @param string $target_env
-   *   The environment to run the command on, if an empty string use the default for the site in blt/blt.yml.
+   *   The environment to run the command on, if an empty string use the
+   *   default for the site in blt/blt.yml.
    *
    * @param array $selected_site_ids
    *   The sites to get a sync map for.

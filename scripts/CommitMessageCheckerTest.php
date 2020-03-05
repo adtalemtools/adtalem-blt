@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Tests;
+namespace Adtalem\Blt\Plugin\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
@@ -12,8 +12,7 @@ use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
  * To run this do:
  *   ./vendor/bin/phpunit blt/src/Tests/Unit/
  */
-class CommitMessageCheckerTest extends TestCase
-{
+class CommitMessageCheckerTest extends TestCase {
 
   /**
    * @param string $pattern
@@ -32,8 +31,7 @@ class CommitMessageCheckerTest extends TestCase
    *
    * @dataProvider providerValidMessagesPass
    */
-  public function testValidMessagesPass($message)
-  {
+  public function testValidMessagesPass($message) {
     $checker = new CommitMessageChecker();
 
     $match_result = $checker->isValid($this->pattern, $message);
@@ -67,8 +65,7 @@ class CommitMessageCheckerTest extends TestCase
    *
    * @dataProvider providerInvalidMessagesFail
    */
-  public function testInvalidMessagesFail($message)
-  {
+  public function testInvalidMessagesFail($message) {
     $checker = new CommitMessageChecker();
 
     $match_result = $checker->isValid($this->pattern, $message);

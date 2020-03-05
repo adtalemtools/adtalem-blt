@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
 use Acquia\Blt\Robo\Commands\Sync as Sync;
@@ -11,7 +11,7 @@ use Robo\Contract\VerbosityThresholdInterface;
 /**
  * Defines commands in the "sync" namespace.
  */
-class AdtalemSyncCommand extends BltTasks{
+class AdtalemSyncCommand extends BltTasks {
 
 
   /**
@@ -43,7 +43,7 @@ class AdtalemSyncCommand extends BltTasks{
    * @executeInVm
    */
   public function sync($options = [
-    'sync-files' => FALSE
+    'sync-files' => FALSE,
   ]) {
     $multisite = $this->promptSite();
     $this->syncDbSite($multisite);
@@ -65,13 +65,15 @@ class AdtalemSyncCommand extends BltTasks{
 
     if (empty($options['normalized-sitename'])) {
       $multisite_config = $this->promptSite();
-    } else {
+    }
+    else {
       $multisite_config = $this->promptSite($options['normalized-sitename']);
     }
 
     if (empty($options['normalized-envname'])) {
       $env_config = $this->promptEnv();
-    } else {
+    }
+    else {
       $env_config = $this->promptEnv($options['normalized-envname']);
     }
 
@@ -96,6 +98,7 @@ class AdtalemSyncCommand extends BltTasks{
       ->drush('sql-drop');
 
   }
+
   /**
    * @param $multisites
    *
@@ -121,7 +124,7 @@ class AdtalemSyncCommand extends BltTasks{
       $remote_alias = $multisite['remote'];
       $stub_alias = substr($remote_alias, 0, -4);
       $env_name = $env['envname'];
-      $env_alias = '@' . $stub_alias.$env_name;
+      $env_alias = '@' . $stub_alias . $env_name;
       $this->say("  * <comment>" . $key . "</comment> | <comment>" . $env_alias . "</comment> => <comment>" . $multisite['local'] . "</comment>");
     }
     $this->say("To modify the set of aliases for syncing, set the values for multisites in blt/blt.yml");
@@ -139,11 +142,11 @@ class AdtalemSyncCommand extends BltTasks{
     $remote_alias = '@' . $multisite['remote'];
     $site_dir = $multisite['site_dir'];
 
-    if(empty($site_dir)){
+    if (empty($site_dir)) {
       throw new Exception('Site needs a site_dir property to sync files.');
     }
 
-    $dest_dir = $this->getConfigValue('docroot') . "/sites/g/files/" . $site_dir .'/files';
+    $dest_dir = $this->getConfigValue('docroot') . "/sites/g/files/" . $site_dir . '/files';
     $this->_mkdir($dest_dir);
     $task = $this->taskDrush()
       ->alias('')
@@ -190,11 +193,11 @@ class AdtalemSyncCommand extends BltTasks{
     foreach ($multisites as $key => $multisite) {
       $remote_alias = '@' . $multisite['remote'];
       $site_dir = $multisite['site_dir'];
-      if(empty($site_dir)){
+      if (empty($site_dir)) {
         throw new Exception('Site needs a site_dir property to sync files.');
       }
 
-      $dest_dir = $this->getConfigValue('docroot') . "/sites/g/files/" . $site_dir .'/files';
+      $dest_dir = $this->getConfigValue('docroot') . "/sites/g/files/" . $site_dir . '/files';
       $this->_mkdir($dest_dir);
       $task = $this->taskDrush()
         ->alias('')
@@ -232,7 +235,7 @@ class AdtalemSyncCommand extends BltTasks{
    */
   public function syncDbSite($multisite) {
     $local_alias = '@self';
-    $local_url =  $multisite['local'];
+    $local_url = $multisite['local'];
     $remote_alias = '@' . $multisite['remote'];
     $i = rand();
 
@@ -270,11 +273,11 @@ class AdtalemSyncCommand extends BltTasks{
    */
   public function syncDbSiteEnv($multisite, $env) {
     $local_alias = '@self';
-    $local_url =  $multisite['local'];
+    $local_url = $multisite['local'];
     $remote_alias = $multisite['remote'];
     $stub_alias = substr($remote_alias, 0, -4);
     $env_name = $env['envname'];
-    $env_alias = '@' . $stub_alias.$env_name;
+    $env_alias = '@' . $stub_alias . $env_name;
     $i = rand();
 
     $task = $this->taskDrush()
@@ -318,9 +321,10 @@ class AdtalemSyncCommand extends BltTasks{
 
   /**
    * Helper function for choosing site to sync.
+   *
    * @return array with site that was chosen.
    */
-  private function promptSite(){
+  private function promptSite() {
     $multisites = $this->getConfigValue('adtalem_multisites');
     $site_list = array_keys($multisites);
     $site = $this->askChoice('What site would you like to use?', $site_list);

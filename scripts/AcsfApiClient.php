@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
+namespace Adtalem\Blt\Plugin\Helpers\Acsf;
 
 use \Psr\Log\LoggerInterface;
 
@@ -33,16 +33,13 @@ class AcsfApiClient {
    *   The ACSF API configurations. It expects these keys, which take priority:
    *     acsf-api-username - Your ACSF username
    *     acsf-api-password - Your ACSF password
-   *     acsf-api-base-url - The API URL, e.g. https://www.sitename.acsitefactory.com/
-   *   If these are not set it will look for these values in environment
-   *   variables, which take second priority:
-   *     ACSF_API_USERNAME
-   *     ACSF_API_PASSWORD
-   *     ACSF_API_BASE_URL
-   *   For backwards compatibility it will also look for these values in the
-   *   environment variables, which take third priority:
-   *     ACQUIA_API_USERNAME
-   *     ACQUIA_API_PASSWORD
+   *     acsf-api-base-url - The API URL, e.g.
+   *   https://www.sitename.acsitefactory.com/ If these are not set it will
+   *   look for these values in environment variables, which take second
+   *   priority: ACSF_API_USERNAME ACSF_API_PASSWORD ACSF_API_BASE_URL For
+   *   backwards compatibility it will also look for these values in the
+   *   environment variables, which take third priority: ACQUIA_API_USERNAME
+   *   ACQUIA_API_PASSWORD
    */
   public function setAcsfApiConfig($config = []) {
     if (!empty($config['acsf-api-username'])) {
@@ -154,7 +151,7 @@ class AcsfApiClient {
       ],
       'http' => [
         'method' => $method,
-        'header'  => "Authorization: Basic " . base64_encode("$this->acsfApiUsername:$this->acsfApiPassword")
+        'header' => "Authorization: Basic " . base64_encode("$this->acsfApiUsername:$this->acsfApiPassword"),
       ],
     ];
 
@@ -227,8 +224,7 @@ class AcsfApiClient {
         }
       }
       return $is_task_errored ? FALSE : TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       return FALSE;
     }
   }

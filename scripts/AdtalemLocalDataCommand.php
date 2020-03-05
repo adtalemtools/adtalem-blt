@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionSourceSitesTrait;
 use Adtalem\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
@@ -11,7 +11,7 @@ use Acquia\Blt\Robo\BltTasks;
  */
 class AdtalemLocalDataCommand extends BltTasks {
 
-  use CommandOptionSourceSitesTrait;
+  //use CommandOptionSourceSitesTrait;
 
   /**
    * Sync data from an upstream to local.
@@ -548,8 +548,7 @@ class AdtalemLocalDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to list backups, reason: {$e->getMessage()}");
       return 1;
     }

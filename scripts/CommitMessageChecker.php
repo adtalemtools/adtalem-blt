@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers;
+namespace Adtalem\Blt\Plugin\Helpers;
 
 /**
  * A class to isolate the commit message validation logic.
@@ -22,9 +22,9 @@ class CommitMessageChecker {
    */
   public function isValid($pattern, $message) {
     if (!preg_match($pattern, $message)) {
-      return false;
+      return FALSE;
     }
-    return true;
+    return TRUE;
   }
 
 }

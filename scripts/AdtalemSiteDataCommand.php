@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
 use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionTargetSitesTrait;
@@ -12,12 +12,13 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
 
+
 /**
  * Defines commands in the "adtalem:site:data" namespace.
  */
 class AdtalemSiteDataCommand extends BltTasks {
 
-  use CommandOptionTargetSitesTrait;
+  // use CommandOptionTargetSitesTrait;
 
   /**
    * The ACSF API Client.
@@ -108,7 +109,10 @@ class AdtalemSiteDataCommand extends BltTasks {
       throw new \Exception('You cannot use label and autolabel at the same time.');
     }
 
-    if (!empty($autolabel) && !in_array($autolabel, ['predeploy', 'prerollback'])) {
+    if (!empty($autolabel) && !in_array($autolabel, [
+        'predeploy',
+        'prerollback',
+      ])) {
       throw new \Exception('You must specify an autolabel strategy; accepted values: predeploy, prerollback');
     }
 
@@ -212,7 +216,10 @@ class AdtalemSiteDataCommand extends BltTasks {
       throw new \Exception('You cannot use label and autolabel at the same time.');
     }
 
-    if (!empty($autolabel) && !in_array($autolabel, ['predeploy', 'prerollback'])) {
+    if (!empty($autolabel) && !in_array($autolabel, [
+        'predeploy',
+        'prerollback',
+      ])) {
       throw new \Exception('You must specify an autolabel strategy; accepted values: predeploy, prerollback');
     }
 
@@ -352,8 +359,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to backup sites, reason: {$e->getMessage()}");
       return 1;
     }
@@ -485,8 +491,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to backup sites, reason: {$e->getMessage()}");
       return 1;
     }
@@ -617,8 +622,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to list backups, reason: {$e->getMessage()}");
       return 1;
     }
@@ -688,8 +692,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to restore sites, reason: {$e->getMessage()}");
       return 1;
     }
@@ -763,8 +766,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to sync sites, reason: {$e->getMessage()}");
       return 1;
     }
@@ -852,8 +854,7 @@ class AdtalemSiteDataCommand extends BltTasks {
           $return_backups = [];
         }
       }
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to list backups, reason: {$e->getMessage()}");
     }
 
@@ -902,8 +903,7 @@ class AdtalemSiteDataCommand extends BltTasks {
       }
 
       return $return_code;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Failed to restore sites, reason: {$e->getMessage()}");
       return 1;
     }

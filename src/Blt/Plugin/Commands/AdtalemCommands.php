@@ -9,7 +9,7 @@ use Robo\Contract\VerbosityThresholdInterface;
 /**
  * Defines commands in the "sync" namespace.
  */
-class AdtalemCommands extends BltTasks{
+class AdtalemCommands extends BltTasks {
 
   /**
    * Initializes Acquia BLT commands for the Adtalem sites.
@@ -33,7 +33,7 @@ class AdtalemCommands extends BltTasks{
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemAliasesCommand.php',
         $this->getConfigValue('repo.root') . '/blt/src/Blt/Plugin/Commands/AdtalemAliasesCommand.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/src/Blt/Plugin/Commands/AdtalemSyncCommand.php',
+        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemSyncCommand.php',
         $this->getConfigValue('repo.root') . '/blt/src/Blt/Plugin/Commands/AdtalemSyncCommand.php', FALSE)
       ->copy(
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemDbCommand.php',

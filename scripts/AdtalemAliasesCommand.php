@@ -6,7 +6,7 @@
  * Time: 09:59
  */
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\Commands\Generate;
 
@@ -34,8 +34,7 @@ class AdtalemAliasesCommand extends Generate\AliasesCommand {
     $error = FALSE;
     try {
       $this->getSiteAliases($site);
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $error = TRUE;
       $this->logger->error("Did not write aliases for $site->name. Error: " . $e->getMessage());
     }
@@ -90,8 +89,7 @@ class AdtalemAliasesCommand extends Generate\AliasesCommand {
 
         try {
           $acsf_sites = $this->getSitesJson($sshFull, $remoteUser);
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
           $this->logger->error("Could not fetch acsf data for $envName. Error: " . $e->getMessage());
         }
 

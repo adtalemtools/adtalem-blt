@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
+namespace Adtalem\Blt\Plugin\Helpers\Acsf;
 
 use AcquiaCloudApi\Response\BackupResponse;
 use Consolidation\Config\ConfigInterface;
@@ -380,8 +380,7 @@ class LocalBackupStorage {
     try {
       $this->filesystem->dumpFile($file, $data);
       return TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Remove file failed with: " . $e->getMessage());
       return FALSE;
     }
@@ -394,8 +393,7 @@ class LocalBackupStorage {
     try {
       $this->filesystem->remove($file);
       return TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Remove file failed with: " . $e->getMessage());
       return FALSE;
     }
@@ -408,8 +406,7 @@ class LocalBackupStorage {
     try {
       $this->filesystem->mkdir($dir);
       return TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->logger->error("Mkdir failed with: " . $e->getMessage());
       return FALSE;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Commands;
+namespace Adtalem\Blt\Plugin\Commands;
 
 use Adtalem\Blt\Plugin\Helpers\CommitMessageChecker;
 use Acquia\Blt\Robo\Commands\Git\GitCommand;
@@ -45,7 +45,7 @@ class AdtalemGitCommand extends GitCommand {
 
     // Iterate over messages and check them.
     $invalid_messages = [];
-    $has_merges = false;
+    $has_merges = FALSE;
     $checker = new CommitMessageChecker();
     foreach ($messages_list as $output_line) {
       // Parse the output, in format "commit_hash:parents:commit_subject".
@@ -60,8 +60,8 @@ class AdtalemGitCommand extends GitCommand {
       //
       // A merge commit:
       // 26d81631871c8629414a017e1b73ef9050766912:f875f0e6 cf09c6fe:Merge pull request #723 from D41079942/DR-906
-      if (false !== strpos($parents, ' ')) {
-        $has_merges = true;
+      if (FALSE !== strpos($parents, ' ')) {
+        $has_merges = TRUE;
 
         // This is a merge commit, so we don't check formatting.
         continue;
@@ -94,7 +94,8 @@ class AdtalemGitCommand extends GitCommand {
         $this->say("After resolving any conflicts, force push your branch:");
         $this->say("  git push origin +{$branch}");
         $this->say("Otherwise, work with the technical lead or release manager to proceed with merging this PR.");
-      } else {
+      }
+      else {
         $number_of_commits = count($messages_list);
         $this->say("Please fix the commit messages by rebasing and following the prompts:");
         $this->say("  git rebase -i HEAD~{$number_of_commits}");

@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Filesets;
+namespace Adtalem\Blt\PluginFilesets;
 
 use Acquia\Blt\Annotations\Fileset;
 use Acquia\Blt\Robo\Config\ConfigAwareTrait;
@@ -17,6 +17,7 @@ use Symfony\Component\Finder\Finder;
  * @see \Acquia\Blt\Robo\Filesets\Filesets
  */
 class Filesets implements ConfigAwareInterface {
+
   use ConfigAwareTrait;
 
   /**
@@ -28,7 +29,7 @@ class Filesets implements ConfigAwareInterface {
     $yaml = Finder::create()
       ->files()
       ->name('.travis.yml')
-      ->ignoreDotFiles(false)
+      ->ignoreDotFiles(FALSE)
       ->depth('<1')
       ->in($this->getConfigValue('repo.root'));
     return $yaml;

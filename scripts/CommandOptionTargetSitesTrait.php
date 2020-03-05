@@ -1,6 +1,6 @@
 <?php
 
-namespace Adtalemtools\AdtalemBlt\Blt\Plugin\Helpers\Acsf;
+namespace Adtalem\Blt\Plugin\Helpers\Acsf;
 
 use Consolidation\SiteAlias\SiteAliasManager;
 use Drush\SiteAlias\SiteAliasFileLoader;
@@ -47,7 +47,8 @@ trait CommandOptionTargetSitesTrait {
 
     $command_definition->addOption(
       new InputOption('--site-ids', '', InputOption::VALUE_OPTIONAL, 'Command delimited list of site IDs to execute this command against.', '')
-    );}
+    );
+  }
 
   /**
    * Process options for selecting sites.
@@ -74,6 +75,7 @@ trait CommandOptionTargetSitesTrait {
 
   /**
    * Confirm the user will continue with the operation on the selected sites.
+   *
    * @param $sync_maps
    * @param $operation_names
    * @param string $type
