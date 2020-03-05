@@ -42,9 +42,6 @@ class AdtalemCommand extends BltTasks {
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemGitCommands.php',
         $this->getConfigValue('repo.root') . '/blt/src/Blt/Plugin/Commands/AdtalemGitCommands.php', FALSE)
       ->copy(
-        $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemHooks.php',
-        $this->getConfigValue('repo.root') . '/blt/src/Blt/Plugin/Hooks/AdtalemHooks.php', FALSE)
-      ->copy(
         $this->getConfigValue('repo.root') . '/vendor/adtalemtools/adtalem-blt/scripts/AdtalemLocalDataCommands.php',
         $this->getConfigValue('repo.root') . '/blt/src/Blt/Plugin/Commands/AdtalemLocalDataCommands.php', FALSE)
       ->copy(
