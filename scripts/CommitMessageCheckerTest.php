@@ -10,7 +10,7 @@ use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
  * A test to make sure the commit message checker matches as expected.
  *
  * To run this do:
- *   ./vendor/bin/phpunit blt/src/Tests/Unit/
+ *   ./vendor/bin/phpunit blt/src/Blt/Plugin/Tests/Unit/
  */
 class CommitMessageCheckerTest extends TestCase {
 
