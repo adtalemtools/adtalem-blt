@@ -1,3 +1,5 @@
+![Image description](img/adtalem-mt-logo.png)
+
 Adtalem Acquia BLT integration
 ====
 
