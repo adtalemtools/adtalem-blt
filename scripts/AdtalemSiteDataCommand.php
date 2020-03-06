@@ -23,7 +23,7 @@ class AdtalemSiteDataCommand extends BltTasks {
   /**
    * The ACSF API Client.
    *
-   * @var \Acquia\Blt\Custom\Helpers\Acsf\AcsfApiClient
+   * @var \Adtalem\Blt\Plugin\Helpers\Acsf\AcsfApiClient
    */
   protected $client;
 

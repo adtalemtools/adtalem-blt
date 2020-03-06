@@ -27,7 +27,7 @@ class AcsfAcApiClient {
   /**
    * The Acquia Cloud API client.
    *
-   * @var \Acquia\Blt\Custom\Helpers\Acsf\Ac\AcWrapperClient
+   * @var \Adtalem\Blt\Plugin\Helpers\Acsf\Ac\AcWrapperClient
    */
   protected $client;
 

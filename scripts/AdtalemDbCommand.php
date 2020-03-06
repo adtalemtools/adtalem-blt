@@ -20,7 +20,7 @@ class AdtalemDbCommand extends BltTasks {
   /**
    * The Acquia Cloud API Client.
    *
-   * @var \Acquia\Blt\Custom\Helpers\Acsf\Ac\AcsfAcApiClient
+   * @var \Adtalem\Blt\Plugin\Helpers\Acsf\Ac\AcsfAcApiClient
    */
   protected $client;
 

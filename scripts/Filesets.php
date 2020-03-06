@@ -13,7 +13,7 @@ use Symfony\Component\Finder\Finder;
  * Each fileset in this class should be tagged with a @fileset annotation and
  * should return \Symfony\Component\Finder\Finder object.
  *
- * @package Acquia\Blt\Custom
+ * @package Adtalem\Blt\Plugin
  * @see \Acquia\Blt\Robo\Filesets\Filesets
  */
 class Filesets implements ConfigAwareInterface {

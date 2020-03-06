@@ -108,7 +108,7 @@ class LocalBackupStorage {
   /**
    * Download and save an Acquia Cloud backup.
    *
-   * @param \Acquia\Blt\Custom\Helpers\Acsf\Ac\AcsfAcApiClient $client
+   * @param \Adtalem\Blt\Plugin\Helpers\Acsf\Ac\AcsfAcApiClient $client
    *   The HTTP client.
    * @param string $db_name
    *   The name of the database.

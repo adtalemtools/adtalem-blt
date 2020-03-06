@@ -4,7 +4,7 @@ namespace Adtalem\Blt\Plugin\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
-use Acquia\Blt\Custom\Helpers\CommitMessageChecker;
+use Adtalem\Blt\Plugin\Helpers\CommitMessageChecker;
 
 /**
  * A test to make sure the commit message checker matches as expected.
