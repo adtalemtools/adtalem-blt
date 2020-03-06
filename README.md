@@ -19,17 +19,21 @@ Initialize the integration by calling recipes:adtalem:init, which is provided by
 Running `blt recipes:adtalem:init` will install the Adtalem BLT commands in the /blt/src/Plugins directory of your project.
 
 Then add the Adtalem BLT namespace in the autoload PSR-4 section of your project's `composer.json`:
-`
+
+```
     "autoload": {
         "psr-4": {
             "Adtalem\\": "blt/src/"
             }
         },
-`
+```
+
 Make sure to commit this as well as your updated composer.json to Git.
 
-##Available commands:
-`
+
+## Available Commands
+
+```
   adtalem:aliases:generate              Generates new Acquia site aliases for blt config.
   adtalem:db:download                   Download a backup for the site.
   adtalem:db:list                       List available backups.
@@ -52,4 +56,4 @@ Make sure to commit this as well as your updated composer.json to Git.
   adtalem:sync:site:env                 [adtalem:env] Synchronize an individual multisite by environment.
   adtalem:sync:truncate                 [adtalem:truncate] Truncate database for multisite.
   adtalem:tests:behat:run               [adtalem:tests:behat] Executes all behat tests.
-`
+```
