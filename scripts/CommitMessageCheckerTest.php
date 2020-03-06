@@ -21,7 +21,7 @@ class CommitMessageCheckerTest extends TestCase {
   protected $pattern;
 
   public function setUp() {
-    $blt_file = dirname(__FILE__) . '/../../../../../blt/blt.yml';
+    $blt_file = dirname(__FILE__) . '/../../../../../../../blt/blt.yml';
     $blt_config = Yaml::parseFile($blt_file);
     $this->pattern = $blt_config['git']['commit-msg']['pattern'];
   }
