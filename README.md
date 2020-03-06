@@ -1,12 +1,15 @@
 ![Image description](img/adtalem-mt-logo.png)
 
-Adtalem Acquia BLT integration
+Adtalem Acquia BLT Integration
 ====
 
 This plugin provides [Acquia BLT](https://github.com/acquia/blt) integration for Adtalem sites.
 
+## Requirements
+- BLT ^10.0.0
+- Drush ^9.5
 
-## Installation and usage
+## Installation and Usage
 
 To use this plugin, you must already have a Drupal project using BLT 10.
 
