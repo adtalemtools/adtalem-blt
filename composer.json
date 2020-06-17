@@ -1,20 +1,24 @@
 {
   "name": "adtalemtools/adtalem-blt",
-    "type": "library",
-    "description": "Acquia BLT integration for Adtalem sites.",
-    "keywords": ["acquia", "blt","adtalem"],
-    "homepage": "https://github.com/adtalemtools/adtalem-blt",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Robert Shell",
-            "role": "Maintainer"
-        }
-    ],
+  "type": "library",
+  "description": "Acquia BLT integration for Adtalem sites.",
+  "keywords": ["acquia", "blt","adtalem", "acsf"],
+  "homepage": "https://github.com/adtalemtools/adtalem-blt",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robert Shell",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Joseph D. Purcell",
+      "role": "Contributor"
+    }
+  ],
   "require": {},
   "autoload": {
     "psr-4": {
-      "Adtalemtools\\AdtalemBlt\\": "./src/"
+      "Adtalem\\": "./src/"
     }
   }
 }
