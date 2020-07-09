@@ -1,9 +1,9 @@
 <?php
 
-namespace Adtalem\Blt\Plugin\Commands;
+namespace Acquia\Blt\Custom\Commands;
 
-use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionSourceSitesTrait;
-use Adtalem\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
+use Acquia\Blt\Custom\Helpers\Acsf\CommandOptionSourceSitesTrait;
+use Acquia\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
 use Acquia\Blt\Robo\BltTasks;
 
 /**
@@ -39,9 +39,10 @@ class AdtalemLocalDataCommand extends BltTasks {
    * Restore a local site from a backup.
    *
    * @command adtalem:local:data:restore
+   * @aliases adtalem:local:data:restore-and-update
    * @executeInVm
    */
-  public function localRestore($options = [
+  public function localRestoreAndUpdate($options = [
     'components' => 'database,public files,private files',
     'backup-id' => '',
   ]) {
@@ -56,7 +57,7 @@ class AdtalemLocalDataCommand extends BltTasks {
       return 0;
     }
 
-    return $this->runLocalDataRestore($selected_sites, $components, $backup_id);
+    return $this->runLocalDataRestoreAndUpdate($selected_sites, $components, $backup_id);
   }
 
   /**
@@ -237,7 +238,7 @@ class AdtalemLocalDataCommand extends BltTasks {
    *   If 0 then all tasks completed successfully. If greater than zero, then
    *   some backups failed to generate.
    */
-  protected function runLocalDataRestore($sync_maps, $components, $backup_id = NULL) {
+  protected function runLocalDataRestoreAndUpdate($sync_maps, $components, $backup_id = NULL) {
     // Ensure we are only using backup_id with a specific site.
     if (count($sync_maps) > 1 && !empty($backup_id)) {
       throw new \Exception('When downloading a specific backup_id you must also specify a single site ID.');
@@ -345,6 +346,14 @@ class AdtalemLocalDataCommand extends BltTasks {
           $result = $this->_exec("drush -l {$sync_map['local_url']} sqlc < {$backup_file_extracted_dir}/database.sql");
           if (!$result->wasSuccessful()) {
             $this->logger->error("Could not import backup file for site ID {$sync_map['site_id']}: {$backup_file_extracted_dir}/database.sql");
+            $return_code++;
+            continue;
+          }
+
+          // Update database must be run first.
+          $result = $this->_exec("drush -l {$sync_map['local_url']} updb -y");
+          if (!$result->wasSuccessful()) {
+            $this->logger->error("Failed to update database for site ID {$sync_map['site_id']}");
             $return_code++;
             continue;
           }
@@ -548,7 +557,8 @@ class AdtalemLocalDataCommand extends BltTasks {
       }
 
       return $return_code;
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $this->logger->error("Failed to list backups, reason: {$e->getMessage()}");
       return 1;
     }
