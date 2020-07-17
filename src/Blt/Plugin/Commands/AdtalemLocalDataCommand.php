@@ -1,3 +1,5 @@
+<?php
+
 namespace Adtalem\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
