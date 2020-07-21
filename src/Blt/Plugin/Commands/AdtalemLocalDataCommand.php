@@ -1,9 +1,9 @@
 <?php
 
-namespace Acquia\Blt\Custom\Commands;
+namespace Adtalem\Blt\Custom\Commands;
 
-use Acquia\Blt\Custom\Helpers\Acsf\CommandOptionSourceSitesTrait;
-use Acquia\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
+use Adtalem\Blt\Custom\Helpers\Acsf\CommandOptionSourceSitesTrait;
+use Adtalem\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
 use Acquia\Blt\Robo\BltTasks;
 
 /**
