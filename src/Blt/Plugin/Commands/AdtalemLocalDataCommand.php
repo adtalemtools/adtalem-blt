@@ -2,6 +2,8 @@
 
 namespace Adtalem\Blt\Plugin\Commands;
 
+use Adtalem\Blt\Custom\Helpers\Acsf\CommandOptionSourceSitesTrait;
+use Adtalem\Blt\Custom\Helpers\Acsf\LocalBackupStorage;
 use Acquia\Blt\Robo\BltTasks;
 use Adtalem\Blt\Plugin\Helpers\Acsf\CommandOptionSourceSitesTrait;
 use Adtalem\Blt\Plugin\Helpers\Acsf\LocalBackupStorage;
